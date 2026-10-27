@@ -1,0 +1,269 @@
+<!doctype html>
+<html lang="sk">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#f5f7f4">
+  <meta name="description" content="MERIX š. f. — všetky naše sociálne siete na jednom mieste. Spoj sa s nami na Instagrame, TikToku a Facebooku.">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="MERIX — Sme na jednom mieste.">
+  <meta property="og:description" content="MERIX š. f. | Instagram, TikTok a Facebook na jednom mieste.">
+  <meta property="og:locale" content="sk_SK">
+  <meta name="color-scheme" content="light">
+  <title>MERIX — Všetko na jednom mieste.</title>
+  <link rel="icon" type="image/png" href="assets/favicon.png">
+  <style>
+    :root {
+      --ink: #182321;
+      --muted: #65716e;
+      --paper: #f5f7f4;
+      --white: #ffffff;
+      --teal: #0aaea7;
+      --teal-dark: #087a75;
+      --pink: #d13d85;
+      --stroke: #dfe6e1;
+      --focus: #066f69;
+      --ease: cubic-bezier(.22,1,.36,1);
+      --page: min(1320px, calc(100vw - 96px));
+    }
+    *, *::before, *::after { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body { margin: 0; min-width: 320px; background: var(--paper); color: var(--ink); font-family: 'Avenir Next', 'Segoe UI', system-ui, -apple-system, Arial, sans-serif; -webkit-font-smoothing: antialiased; }
+    ::selection { background: #b4ece5; color: #172725; }
+    a { color: inherit; }
+    button { font: inherit; }
+    a:focus-visible, button:focus-visible { outline: 3px solid var(--focus); outline-offset: 5px; }
+    .skip-link {position:absolute;top:-90px;left:16px;z-index:100;background:var(--ink);color:white;padding:12px 18px;border-radius:12px}
+    .skip-link:focus {top:12px}
+    #particles {pointer-events:none;position:fixed;inset:0;z-index:0;width:100%;height:100%;opacity:.65}
+    .ambient {position:fixed;inset:0;z-index:0;pointer-events:none;overflow:hidden;background:radial-gradient(ellipse 55% 65% at 10% 85%, rgba(2,192,172,.075), transparent 75%), radial-gradient(ellipse 44% 63% at 93% 5%,rgba(227,58,133,.065),transparent 80%)}
+    .ambient::before {content:"";position:absolute;inset:0;background-image:radial-gradient(#7b8a83 0.58px, transparent .65px);background-size:27px 27px;opacity:.13;mask-image:linear-gradient(90deg, transparent, black 20%, black 80%, transparent)}
+    .ambient::after {content:"";position:absolute;width:450px;height:450px;border-radius:50%;border:1px solid rgba(4,119,108,.065);left:-240px;bottom:-250px;box-shadow:0 0 0 95px rgba(4,119,108,.012),0 0 0 190px rgba(4,119,108,.012)}
+    .shell {position:relative;z-index:1;max-width:var(--page);margin-inline:auto}
+    .topbar {height:105px;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid rgba(66,86,77,.16)}
+    .wordmark {display:flex;align-items:center;gap:12px;text-decoration:none;font-size:20px;letter-spacing:-.07em;font-weight:900}
+    .wordmark-img {height:36px;width:49px;object-fit:contain}
+    .wordmark .dot {color:var(--pink)}
+    .top-side {display:flex;align-items:center;gap:34px}
+    .top-label {font-size:11px;letter-spacing:.14em;font-weight:800;color:#5b6a64}
+    .availability {font-size:11px;font-weight:700;display:flex;gap:9px;align-items:center;color:#466f63;letter-spacing:.055em}
+    .availability::before {content:"";display:block;width:8px;height:8px;border-radius:50%;background:#1bbb9d;box-shadow:0 0 0 4px rgba(27,187,157,.13)}
+    main {min-height:min(785px, calc(100svh - 180px));display:grid;grid-template-columns:minmax(0,1.07fr) minmax(0,.93fr);gap:clamp(30px,5vw,94px);align-items:center;padding:56px 0 65px}
+    .hero {min-width:0;position:relative;}
+    .hero-eyebrow, .panel-kicker, .small-title {font-size:12px;font-weight:850;letter-spacing:.19em;text-transform:uppercase}
+    .hero-eyebrow {display:flex;gap:13px;align-items:center;color:var(--teal-dark);margin:0 0 25px}
+    .hero-eyebrow::before {content:"";height:2px;width:24px;background:var(--teal);border-radius:3px}
+    h1 {font-size:clamp(82px,8.1vw,136px);font-weight:900;letter-spacing:-.103em;line-height:.94;margin:0 0 27px;max-width:690px}
+    h1 .title-line {display:block}
+    .chromatic {display:inline-block;position:relative;color:var(--teal-dark)}
+    .chromatic::after {content:"";position:absolute;left:8px;right:0;bottom:-2px;height:8px;border-radius:50%;background:var(--pink);opacity:.75;transform:rotate(-1.5deg);z-index:-1}
+    .hero-summary {font-size:clamp(17px,1.7vw,21px);line-height:1.65;max-width:440px;color:var(--muted);margin:0}
+    .hero-summary strong {color:var(--ink);font-weight:800}
+    .signature {margin-top:42px;position:relative;width:min(100%,395px);height:235px;display:grid;place-items:center;isolation:isolate;transform-style:preserve-3d;perspective:900px}
+    .signature::before {content:"";position:absolute;inset:20px 28px 16px 18px;border:1px solid rgba(14,133,124,.17);border-radius:50%;transform:rotate(-15deg)}
+    .signature::after {content:"";position:absolute;inset:35px 10px 16px 22px;border:1px dashed rgba(203,65,134,.19);border-radius:50%;transform:rotate(22deg)}
+    .logo-cloud {position:absolute;width:245px;height:145px;background:radial-gradient(ellipse,rgba(7,185,168,.14),rgba(213,61,132,.08) 45%,transparent 72%);filter:blur(21px);z-index:-1}
+    .hero-logo {width:min(93%,350px);height:auto;object-fit:contain;filter:drop-shadow(0 15px 14px rgba(6,104,100,.11));animation:logo-float 6s ease-in-out infinite;will-change:transform;user-select:none}
+    .orbit-point {position:absolute;width:10px;height:10px;border-radius:50%;background:var(--pink);top:27px;right:67px;box-shadow:0 0 0 6px rgba(211,61,133,.12)}
+    .orbit-point.two {top:auto;right:auto;left:29px;bottom:48px;background:var(--teal);width:7px;height:7px;box-shadow:0 0 0 5px rgba(9,177,164,.1)}
+    .micro-note {position:absolute;bottom:4px;right:0;font-size:10px;letter-spacing:.13em;font-weight:800;color:#9dada5}
+    .links-panel {position:relative;width:100%;min-width:0;isolation:isolate;border:1px solid rgba(255,255,255,.8);border-radius:35px;padding:clamp(24px,3.4vw,44px);background:rgba(255,255,255,.76);box-shadow:0 27px 80px rgba(41,74,63,.075),0 2px 12px rgba(41,74,63,.03),inset 0 1px 0 rgba(255,255,255,.9);}
+    .links-panel::before {content:"";position:absolute;inset:1px;border:1px solid rgba(225,234,227,.65);border-radius:33px;pointer-events:none}
+    .panel-header {display:flex;align-items:start;justify-content:space-between;gap:15px;padding-bottom:30px}
+    .panel-kicker {color:var(--teal-dark);margin:0 0 12px}
+    .panel-title {font-size:clamp(27px,2.6vw,36px);font-weight:850;letter-spacing:-.07em;line-height:1.13;margin:0}
+    .panel-header .asterisk {font-size:42px;line-height:1;color:var(--pink);font-weight:300;animation:asterisk-turn 22s linear infinite;transform-origin:center}
+    .social-stack {display:grid;gap:13px}
+    .social-card {--glow:rgba(10,174,167,.18);position:relative;overflow:hidden;display:flex;align-items:center;gap:18px;min-height:100px;padding:19px 21px;text-decoration:none;border-radius:21px;border:1px solid #dce8e3;background:#fff;color:var(--ink);box-shadow:0 6px 16px rgba(23,51,42,.025);transform:perspective(950px) translate3d(var(--move-x,0px),var(--move-y,0px),0) rotateX(var(--tilt-x,0deg)) rotateY(var(--tilt-y,0deg));transition:transform .5s var(--ease), box-shadow .5s var(--ease), border-color .4s ease, background .4s ease;will-change:transform}
+    .social-card::after {content:"";position:absolute;inset:0;pointer-events:none;background:radial-gradient(200px circle at var(--spot-x,50%) var(--spot-y,50%),var(--glow),transparent 75%);opacity:0;transition:opacity .35s ease}
+    .social-card:hover::after,.social-card:focus-visible::after {opacity:1}
+    .social-card:hover {border-color:#9bcdc2;box-shadow:0 17px 33px rgba(18,81,73,.11)}
+    .social-card:focus-visible {z-index:2}
+    .social-card svg {flex:none}
+    .social-icon {display:grid;place-items:center;flex:none;width:53px;height:53px;border-radius:16px;background:#e3f8f4;color:#076f69}
+    .social-card.instagram {background:#18312e;color:#fff;border-color:#18312e;--glow:rgba(23,217,185,.25)}
+    .social-card.instagram .social-icon {background:rgba(255,255,255,.12);color:#fff}
+    .social-card.instagram .social-subtitle {color:#cadbd6}
+    .social-card.instagram .arrow {color:#fff;border-color:rgba(255,255,255,.22)}
+    .social-card.tiktok .social-icon {background:#f9e8f2;color:#ba2971}
+    .social-card.facebook .social-icon {background:#e8edff;color:#3154bd}
+    .social-copy {flex:1;min-width:0;display:grid;gap:4px}
+    .social-name {font-size:20px;line-height:1.2;font-weight:800;letter-spacing:-.045em}
+    .social-subtitle {font-size:12px;font-weight:600;color:#697872;letter-spacing:.008em;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+    .arrow {width:36px;height:36px;border:1px solid #dce5e0;border-radius:50%;display:grid;place-items:center;flex:none;transition:transform .35s var(--ease),background .35s ease}
+    .social-card:hover .arrow {transform:translate(3px,-3px);background:rgba(127,166,154,.12)}
+    .panel-bottom {padding-top:28px;margin-top:28px;border-top:1px solid #e6ece7;display:flex;align-items:center;gap:14px;justify-content:space-between}
+    .small-title {color:#80928a;margin:0 0 6px;font-size:10px}
+    .bottom-copy {font-size:13px;color:var(--muted);margin:0;line-height:1.45}
+    .share-btn {border:1px solid #d5e4db;color:#1e524b;background:#eff7f2;border-radius:14px;display:inline-flex;align-items:center;gap:10px;min-height:49px;padding:0 17px;font-size:13px;font-weight:800;white-space:nowrap;cursor:pointer;transition:transform .3s var(--ease),background .3s}
+    .share-btn:hover {transform:translateY(-2px);background:#e4f3eb}
+    .share-btn:active {transform:translateY(0)}
+    .footer {border-top:1px solid rgba(66,86,77,.16);display:flex;align-items:center;justify-content:space-between;gap:16px;padding:24px 0 37px;color:#73837c}
+    .footer-brand {font-size:12px;font-weight:800;letter-spacing:.055em;color:#4d645c}
+    .footer-right {font-size:11px;letter-spacing:.10em;font-weight:650;text-transform:uppercase}
+    .toast {position:fixed;z-index:20;left:50%;bottom:28px;transform:translate(-50%, 20px);opacity:0;pointer-events:none;max-width:calc(100vw - 32px);width:max-content;text-align:center;background:#18312e;color:white;padding:13px 20px;border-radius:15px;box-shadow:0 16px 40px rgba(0,0,0,.2);font-size:13px;font-weight:700;transition:opacity .25s,transform .25s}
+    .toast.show {opacity:1;transform:translate(-50%, 0)}
+    @keyframes logo-float {0%,100%{transform:translate3d(0,0,0) rotate(-3deg)}50%{transform:translate3d(0,-12px,0) rotate(-1deg)}}
+    @keyframes asterisk-turn {to{transform:rotate(360deg)}}
+    @keyframes arrive {from{opacity:0;transform:translateY(22px)}to{opacity:1;transform:translateY(0)}}
+    @media(prefers-reduced-motion:no-preference) {
+      .hero-eyebrow,.hero h1,.hero-summary,.signature,.links-panel {animation:arrive .9s var(--ease) both}
+      .hero h1{animation-delay:.07s}.hero-summary{animation-delay:.15s}.signature{animation-delay:.23s}.links-panel{animation-delay:.18s}
+    }
+    @media (max-width:1050px){:root{--page:min(100% - 60px,950px)} main{gap:24px;grid-template-columns:minmax(0,1fr) minmax(0,1fr)}h1{font-size:clamp(68px,8.3vw,104px)} .links-panel{padding:28px}.social-card{padding:16px;min-height:93px}.social-name{font-size:18px}.signature{height:205px}}
+    @media (max-width:760px){:root{--page:calc(100% - 44px)} .topbar{height:77px}.top-side{gap:12px}.top-label{display:none}.availability{font-size:10px}main{grid-template-columns:1fr;min-height:unset;gap:32px;padding:35px 0 42px}.hero{text-align:center;display:flex;flex-direction:column;align-items:center}.hero-eyebrow{margin:0 0 20px;font-size:10px}.hero h1{font-size:clamp(67px,15.8vw,110px);margin-bottom:17px}.hero-summary{font-size:16px;line-height:1.6}.signature{order:-1;height:180px;width:min(100%,325px);margin-bottom:20px;margin-top:0}.signature::before{inset:15px 23px}.signature::after{inset:25px 16px}.hero-logo{width:min(92%,295px)}.orbit-point{right:49px;top:17px}.micro-note{display:none}.links-panel{padding:23px;border-radius:28px}.links-panel::before{border-radius:26px}.panel-header{padding-bottom:21px}.panel-title{font-size:30px}.footer{padding:22px 0 28px}}
+    @media (max-width:410px){:root{--page:calc(100% - 36px)}.wordmark{font-size:18px}.wordmark-img{width:42px;height:30px}.availability{font-size:9px}.hero h1{font-size:clamp(62px,16vw,75px)}.signature{height:162px;margin-bottom:13px}.social-card{min-height:86px;gap:13px;padding:13px 14px;border-radius:18px}.social-icon{width:47px;height:47px;border-radius:14px}.social-name{font-size:18px}.social-subtitle{font-size:11px}.arrow{width:33px;height:33px}.panel-bottom{flex-wrap:wrap;gap:14px}.share-btn{width:100%;justify-content:center}.footer-right{font-size:9px}}
+    @media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important}#particles{display:none}.social-card{transform:none!important}}
+    @media (hover:none),(pointer:coarse){.social-card{transform:none!important;will-change:auto}.social-card::after{display:none}}
+  </style>
+</head>
+<body>
+  <a class="skip-link" href="#social-links">Preskočiť na sociálne siete</a>
+  <div class="ambient" aria-hidden="true"></div>
+  <canvas id="particles" aria-hidden="true"></canvas>
+  <div class="shell">
+    <header class="topbar">
+      <a class="wordmark" href="./index.html" aria-label="MERIX — úvodná stránka">
+        <img class="wordmark-img" src="assets/merix-logo.png" alt="" width="49" height="36">
+        MERIX<span class="dot">.</span>
+      </a>
+      <div class="top-side"><span class="top-label">ONE PLACE. ALL LINKS.</span><span class="availability">ŠTUDENTSKÁ FIRMA</span></div>
+    </header>
+
+    <main id="main">
+      <section class="hero" aria-labelledby="hero-title">
+        <p class="hero-eyebrow">Vitaj v našom svete</p>
+        <h1 id="hero-title"><span class="title-line">Sme</span><span class="title-line"><span class="chromatic">MERIX.</span></span></h1>
+        <p class="hero-summary">Jedno miesto. Všetky naše sociálne siete.<br><strong>Sleduj nás a zostaň s nami v spojení.</strong></p>
+        <div class="signature" aria-label="Originálne logo MERIX">
+          <div class="logo-cloud" aria-hidden="true"></div>
+          <span class="orbit-point" aria-hidden="true"></span>
+          <span class="orbit-point two" aria-hidden="true"></span>
+          <img class="hero-logo" src="assets/merix-logo.png" width="350" height="238" alt="Originálne tyrkysovo-ružové logo študentskej firmy MERIX">
+          <span class="micro-note" aria-hidden="true">THE MERIX UNIVERSE / 01</span>
+        </div>
+      </section>
+
+      <section class="links-panel" id="social-links" aria-labelledby="links-title">
+        <div class="panel-header">
+          <div><p class="panel-kicker">/ ZOSTAŇ V KONTAKTE</p><h2 id="links-title" class="panel-title">Nájdi nás online<span aria-hidden="true">.</span></h2></div>
+          <span class="asterisk" aria-hidden="true">✳</span>
+        </div>
+        <!-- SOCIAL LINKS CONFIGURATION: edit href values below; these anchors also work without JavaScript. -->
+        <nav class="social-stack" aria-label="Oficiálne sociálne odkazy dodané firmou MERIX">
+          <a class="social-card instagram" href="https://www.instagram.com/merix_sf?psln=dmM4MmpsNHN2NGUx" target="_blank" rel="noopener noreferrer" aria-label="Instagram MERIX @merix_sf, otvorí sa na novej karte">
+            <span class="social-icon" aria-hidden="true"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="18" cy="6" r="1" fill="currentColor" stroke="none"/></svg></span>
+            <span class="social-copy"><span class="social-name">Instagram</span><span class="social-subtitle">@merix_sf · Náš profil</span></span>
+            <span class="arrow" aria-hidden="true"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7M8 7h9v9"/></svg></span>
+          </a>
+          <a class="social-card tiktok" href="https://www.tiktok.com/@merix_sf?_r=1&amp;_t=ZN-9Aurbr3oSj0" target="_blank" rel="noopener noreferrer" aria-label="TikTok MERIX @merix_sf, otvorí sa na novej karte">
+            <span class="social-icon" aria-hidden="true"><svg width="25" height="25" viewBox="0 0 24 24" fill="currentColor"><path d="M16.8 2c.22 2.6 1.78 4.16 4.2 4.33v4.03c-1.53.02-3.02-.47-4.22-1.34v6.9a6.54 6.54 0 1 1-6.53-6.53c.38 0 .76.03 1.13.1v4.04a2.55 2.55 0 1 0 1.38 2.26V2h4.04Z"/></svg></span>
+            <span class="social-copy"><span class="social-name">TikTok</span><span class="social-subtitle">@merix_sf · Videá a novinky</span></span>
+            <span class="arrow" aria-hidden="true"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7M8 7h9v9"/></svg></span>
+          </a>
+          <a class="social-card facebook" href="https://www.facebook.com/share/1KnEnNTUkM/?mibextid=wwXIfr" target="_blank" rel="noopener noreferrer" aria-label="Facebook MERIX, otvorí sa na novej karte">
+            <span class="social-icon" aria-hidden="true"><svg width="25" height="25" viewBox="0 0 24 24" fill="currentColor"><path d="M14.15 21.5v-8.65h2.9l.44-3.38h-3.34V7.31c0-.98.27-1.65 1.67-1.65h1.78V2.64c-.31-.04-1.37-.14-2.6-.14-2.58 0-4.35 1.57-4.35 4.46v2.51H7.73v3.38h2.92v8.65h3.5Z"/></svg></span>
+            <span class="social-copy"><span class="social-name">Facebook</span><span class="social-subtitle">MERIX · Sleduj nás</span></span>
+            <span class="arrow" aria-hidden="true"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7M8 7h9v9"/></svg></span>
+          </a>
+        </nav>
+        <div class="panel-bottom">
+          <div><p class="small-title">POSUŇ TO ĎALEJ</p><p class="bottom-copy">Pošli náš odkaz niekomu ďalšiemu.</p></div>
+          <button class="share-btn" type="button" id="share-btn" aria-label="Zdieľať stránku MERIX"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><path d="m8.6 10.5 6.8-4M8.6 13.5l6.8 4"/></svg> Zdieľať stránku</button>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer"><span class="footer-brand">MERIX <span aria-hidden="true" style="color:var(--pink)">✳</span> Š. F.</span><span class="footer-right">ALL LINKS / ONE DESTINATION · <span id="year">2026</span></span></footer>
+  </div>
+  <div id="toast" class="toast" role="status" aria-live="polite"></div>
+  <script>
+    (() => {
+      'use strict';
+      const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
+      const finePointer = window.matchMedia('(hover: hover) and (pointer: fine)');
+      document.getElementById('year').textContent = new Date().getFullYear();
+      const toast = document.getElementById('toast');
+      let toastTimeout;
+      function showToast(message) {
+        toast.textContent = message;
+        toast.classList.add('show');
+        clearTimeout(toastTimeout);
+        toastTimeout = setTimeout(() => toast.classList.remove('show'), 4400);
+      }
+      const shareButton = document.getElementById('share-btn');
+      shareButton.addEventListener('click', async () => {
+        const {protocol, hostname, href} = location;
+        const isPublicHttps = protocol === 'https:' && hostname !== 'localhost' && hostname !== '127.0.0.1' && hostname !== '[::1]' && !hostname.endsWith('.local');
+        if (!isPublicHttps) {showToast('Zdieľanie odkazu bude dostupné po zverejnení webu na HTTPS adrese.'); return;}
+        try {
+          if (navigator.share) {await navigator.share({title:'MERIX — naše sociálne siete', text:'Nájdi MERIX na sociálnych sieťach.',url:href});return;}
+          if (navigator.clipboard?.writeText) {await navigator.clipboard.writeText(href);showToast('Odkaz na MERIX bol skopírovaný.');return;}
+          showToast('Skopíruj adresu stránky z panela prehliadača.');
+        } catch (error) {
+          if (error?.name !== 'AbortError') showToast('Zdieľanie sa nepodarilo. Skopíruj adresu z prehliadača.');
+        }
+      });
+
+      const cards = Array.from(document.querySelectorAll('.social-card'));
+      function resetCard(card){card.style.setProperty('--tilt-x','0deg');card.style.setProperty('--tilt-y','0deg');card.style.setProperty('--move-x','0px');card.style.setProperty('--move-y','0px');}
+      if (finePointer.matches) {
+        cards.forEach(card => {
+          card.addEventListener('pointermove', event => {
+            if (reduceMotion.matches) return;
+            const box=card.getBoundingClientRect();
+            const x=(event.clientX-box.left)/box.width-.5;
+            const y=(event.clientY-box.top)/box.height-.5;
+            card.style.setProperty('--tilt-x',`${(-y*4).toFixed(2)}deg`);
+            card.style.setProperty('--tilt-y',`${(x*5).toFixed(2)}deg`);
+            card.style.setProperty('--move-x',`${(x*3).toFixed(2)}px`);
+            card.style.setProperty('--move-y',`${(y*3).toFixed(2)}px`);
+            card.style.setProperty('--spot-x',`${(x+.5)*100}%`);
+            card.style.setProperty('--spot-y',`${(y+.5)*100}%`);
+          },{passive:true});
+          card.addEventListener('pointerleave',()=>resetCard(card));
+          card.addEventListener('blur',()=>resetCard(card));
+        });
+      }
+      reduceMotion.addEventListener?.('change',()=>cards.forEach(resetCard));
+
+      // Ambient particles: no dependencies, throttled to ~30fps and stopped when hidden.
+      const canvas=document.getElementById('particles');
+      const ctx=canvas?.getContext('2d',{alpha:true});
+      if (!ctx) return;
+      let particles=[], width=0, height=0, frame=0, lastTime=0;
+      const smallScreen=()=>innerWidth<760;
+      function resize(){
+        const ratio=Math.min(window.devicePixelRatio||1,2);
+        width=innerWidth;height=innerHeight;
+        canvas.width=Math.max(1,Math.round(width*ratio));
+        canvas.height=Math.max(1,Math.round(height*ratio));
+        ctx.setTransform(ratio,0,0,ratio,0,0);
+        const count=smallScreen()?18:36;
+        particles=Array.from({length:count},(_,i)=>({x:Math.random()*width,y:Math.random()*height,r:i%7===0?2.2:.8+Math.random()*1.2,vy:(Math.random()-.5)*.15,vx:(Math.random()-.5)*.13,color:i%4===0?'209,61,133':'9,174,164',a:.14+Math.random()*.27}));
+      }
+      function draw(time){
+        frame=0;
+        if (document.hidden||reduceMotion.matches) return;
+        if (time-lastTime<32) {frame=requestAnimationFrame(draw);return;}
+        lastTime=time;ctx.clearRect(0,0,width,height);
+        for(const p of particles){
+          p.x+=p.vx;p.y+=p.vy;
+          if(p.x<0)p.x=width;else if(p.x>width)p.x=0;
+          if(p.y<0)p.y=height;else if(p.y>height)p.y=0;
+          ctx.beginPath();ctx.arc(p.x,p.y,p.r,0,Math.PI*2);
+          ctx.fillStyle=`rgba(${p.color},${p.a})`;ctx.fill();
+        }
+        frame=requestAnimationFrame(draw);
+      }
+      function stop(){if(frame){cancelAnimationFrame(frame);frame=0}ctx.clearRect(0,0,width,height);}
+      function start(){stop();if(!document.hidden&&!reduceMotion.matches)frame=requestAnimationFrame(draw)}
+      let resizeFrame=0;
+      addEventListener('resize',()=>{cancelAnimationFrame(resizeFrame);resizeFrame=requestAnimationFrame(()=>{resize();start()})},{passive:true});
+      document.addEventListener('visibilitychange',()=>document.hidden?stop():start());
+      reduceMotion.addEventListener?.('change',()=>reduceMotion.matches?stop():start());
+      resize();start();
+    })();
+  </script>
+</body>
+</html>
